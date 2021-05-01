@@ -3,6 +3,7 @@ import './App.css';
 import Form from "./Form";
 import Overview from "./Overview";
 import Weather from "./Weather";
+import Kristen from "./Kristen";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
          <Overview />
          <Weather />
         </div>
+       
       </div>
-     
+      <Kristen />
     </div>
   );
 }
