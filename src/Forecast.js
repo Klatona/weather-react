@@ -20,7 +20,7 @@ export default function Forecast() {
                         </div>)
     return (
       <div className= "Forecast"> 
-      <div className="row justify-content-md-center" >
+      <div className="row justify-content-md-center">
                      {weatherForecast}  
                         {weatherForecast}
                         {weatherForecast}
