@@ -4,6 +4,7 @@ import Form from "./Form";
 import Overview from "./Overview";
 import Weather from "./Weather";
 import Kristen from "./Kristen";
+import Forecast from "./Forecast";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Form />
          <Overview />
          <Weather />
+         <Forecast />
         </div>
        
       </div>
