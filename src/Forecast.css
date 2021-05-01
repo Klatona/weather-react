@@ -1,10 +1,11 @@
-p {
+p .Forecast {
   margin-bottom: 0;
 }
 
 .Day {
   color: #ffffff;
   font-size: 14.5px;
+  font-weight: 900px;
   text-align: center;
   box-shadow: rgba(37, 39, 89, 0.15) 0 5px 5px 0;
   background-color: #557174;
@@ -13,9 +14,6 @@ p {
   margin-top: 5px;
 }
 
-.Day strong {
-  font-weight: 900px;
-}
 .Forecast {
   position: relative;
   left: 12px;

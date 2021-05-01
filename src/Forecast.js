@@ -3,10 +3,7 @@ import React from "react";
 import "./Forecast.css";
 
 export default function Forecast() {
-  return (
-      <div className= "Forecast"> 
-      <div className="row justify-content-md-center" >
-                        <div class="col-md-2">
+  const weatherForecast = ( <div class="col-md-2">
                             <div className="card Day">
                                 <div className="card-body">
                                     <p>
@@ -20,8 +17,16 @@ export default function Forecast() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>)
+    return (
+      <div className= "Forecast"> 
+      <div className="row justify-content-md-center" >
+                     {weatherForecast}  
+                        {weatherForecast}
+                        {weatherForecast}
+                        {weatherForecast}
+                        {weatherForecast}
+                        {weatherForecast}
                    </div>     
                     </div>
       );
