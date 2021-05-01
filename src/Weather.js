@@ -1,13 +1,19 @@
 import React from "react";
 
 import "./Weather.css";
+import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Weather() {
   let weatherData = {
     temp: 14,
     humidity: 10,
     wind: 2,
-    icon: "fas fa-cloud"
+    icon: <ReactAnimatedWeather
+        icon="CLOUDY"
+        color= "#557174"
+        size={70}
+        animate={true}
+      />
   };
 
   return (
@@ -18,7 +24,7 @@ export default function Weather() {
             <div className="card-body">
               <p className="main-degree">
                 <span>
-                  <i class={weatherData.icon}></i>
+                  {weatherData.icon}
                 </span>
                 <span> {weatherData.temp}</span>
                 <span className="degree-c">
