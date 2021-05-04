@@ -16,7 +16,7 @@ export default function Form() {
                   className="form-control"
                   id="search-text"
                   placeholder="Enter a city"
-                  autoFocus
+                  autoFocus="on"
                   autoComplete="off"
                 />
                 <button

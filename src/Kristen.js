@@ -5,7 +5,7 @@ import "./Kristen.css";
 export default function Kristen() {
   return (
     <div className="Kristen">
-      <p class="latona">
+      <footer class="latona">
         <a
           href="https://github.com/Klatona/weather-react"
           target="_blank"
@@ -28,7 +28,7 @@ export default function Kristen() {
         >
           Netlify
         </a>
-      </p>
+      </footer>
     </div>
   );
 }
