@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-
+import FormattedDate from "./FormattedDate";
 
 import "./Weather.css";
 import ReactAnimatedWeather from "react-animated-weather";
@@ -9,7 +9,6 @@ export default function Weather(props) {
   const [weatherData, setWeatherData]= useState({ready: false});
   
   function handleResponse(response){
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temp: response.data.main.temp,
@@ -17,7 +16,8 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       city: response.data.name,
-      country: "CA",
+      country: response.data.sys.country,
+      date: new Date(response.data.dt*1000),
       icon: <ReactAnimatedWeather
         icon="CLOUDY"
         color= "#557174"
@@ -34,12 +34,13 @@ export default function Weather(props) {
         <div className="col-sm-12">
           <div className="card-body">
             <h1>
-              <span> {weatherData.city} </span>,
+              <span> {weatherData.city}</span>,
               <span> {weatherData.country} </span>
             </h1>
             <h2>
-              <span> Last updated: {weatherData.date}</span>
-
+              <span> Last updated: <FormattedDate date={weatherData.date} />
+                </span> 
+               
               <br />
             </h2>
             <h3>{weatherData.description}</h3>
