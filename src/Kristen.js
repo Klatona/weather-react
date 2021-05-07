@@ -5,7 +5,7 @@ import "./Kristen.css";
 export default function Kristen() {
   return (
     <div className="Kristen">
-      <footer class="latona">
+      <footer className="latona">
         <a
           href="https://github.com/Klatona/weather-react"
           target="_blank"

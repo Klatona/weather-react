@@ -1,23 +1,51 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
+
 
 import "./Weather.css";
 import ReactAnimatedWeather from "react-animated-weather";
 
-export default function Weather() {
-  let weatherData = {
-    temp: 14,
-    humidity: 10,
-    wind: 2,
-    icon: <ReactAnimatedWeather
+export default function Weather(props) {
+  const [weatherData, setWeatherData]= useState({ready: false});
+  
+  function handleResponse(response){
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temp: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      city: response.data.name,
+      country: "CA",
+      icon: <ReactAnimatedWeather
         icon="CLOUDY"
         color= "#557174"
         size={70}
         animate={true}
       />
-  };
+    });
+  }
 
-  return (
-    <div className="Weather">
+  if(weatherData.ready){
+    return (
+<div className="Weather">
+      <div className="row Overview">
+        <div className="col-sm-12">
+          <div className="card-body">
+            <h1>
+              <span> {weatherData.city} </span>,
+              <span> {weatherData.country} </span>
+            </h1>
+            <h2>
+              <span> Last updated: {weatherData.date}</span>
+
+              <br />
+            </h2>
+            <h3>{weatherData.description}</h3>
+          </div>
+        </div>
+      </div>
       <div className="row">
         <div className="col-sm-8">
           <div className="card Toronto">
@@ -26,7 +54,7 @@ export default function Weather() {
                 <span>
                   {weatherData.icon}
                 </span>
-                <span> {weatherData.temp}</span>
+                <span> {Math.round(weatherData.temp)}</span>
                 <span className="degree-c">
                   <a href="/" className="active">
                     ºC
@@ -57,4 +85,13 @@ export default function Weather() {
       </div>
     </div>
   );
-}
+} else {
+  const apiKey = "77d24154f7d1152aa34c726466037a7c";
+  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+  
+  axios.get(apiUrl).then(handleResponse);
+
+  return "Loading...";
+
+    }    
+  }

@@ -5,7 +5,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 
 export default function Forecast() {
-  const weatherForecast = ( <div class="col-md-2">
+  const weatherForecast = ( <div className="col-md-2">
                             <div className="card Day">
                                 <div className="card-body">
                                     <p>

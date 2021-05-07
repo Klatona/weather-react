@@ -1,3 +1,20 @@
+h1,
+h2,
+h3 {
+  position: relative;
+  top: -35px;
+}
+h1 {
+  color: #557174;
+  font-size: 50px;
+}
+
+h2,
+h3 {
+  color: #9dad7f;
+  font-size: 25px;
+}
+
 p {
   margin-bottom: 0;
 }
@@ -67,4 +84,11 @@ ul {
   border: 0 solid;
   box-shadow: none;
   text-align: center;
+}
+
+.Overview {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 5;
 }
