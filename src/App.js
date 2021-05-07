@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-import Form from "./Form";
 
 import Weather from "./Weather";
 import Kristen from "./Kristen";
@@ -11,8 +10,7 @@ function App() {
     <div className="App">
       <div className="card body">
         <div className="card-body background">
-          <Form />
-         
+          
          <Weather defaultCity="Toronto"/>
          <Forecast />
         

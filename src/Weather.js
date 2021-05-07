@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
-
 import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Weather(props) {
@@ -30,61 +29,43 @@ export default function Weather(props) {
   if(weatherData.ready){
     return (
 <div className="Weather">
-      <div className="row Overview">
-        <div className="col-sm-12">
-          <div className="card-body">
-            <h1>
-              <span> {weatherData.city}</span>,
-              <span> {weatherData.country} </span>
-            </h1>
-            <h2>
-              <span> Last updated: <FormattedDate date={weatherData.date} />
-                </span> 
-               
-              <br />
-            </h2>
-            <h3>{weatherData.description}</h3>
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm-8">
-          <div className="card Toronto">
-            <div className="card-body">
-              <p className="main-degree">
-                <span>
-                  {weatherData.icon}
-                </span>
-                <span> {Math.round(weatherData.temp)}</span>
-                <span className="degree-c">
-                  <a href="/" className="active">
-                    ºC
-                  </a>
-                </span>{" "}
-                |{" "}
-                <span className="degree-f">
-                  <a href="/">ºF</a>
-                </span>
-              </p>
+      <div className="card-body background">
+        <form className="search-form">
+          <div className="row">
+            <div className="col-8">
+              <div className="input-group mb-5 mt-4">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="search-text"
+                  placeholder="Enter a city"
+                  autoFocus="on"
+                  autoComplete="off"
+                />
+                <button
+                  className="btn btn-outline-secondary"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+            <div className="col-1">
+              <button
+                type="button"
+                className="btn btn-outline-success mb-5 mt-4"
+                id="current-button"
+              >
+                Current
+              </button>
             </div>
           </div>
-        </div>
-        <div className="col-sm-3">
-          <div className="card humidityWind">
-            <div className="card-body">
-              <ul>
-                <li>
-                  Humidity: <span>{weatherData.humidity}%</span>
-                </li>
-                <li>
-                  Wind: <span>{weatherData.wind}km/h</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
+     <WeatherInfo data={weatherData}/>
     </div>
+
   );
 } else {
   const apiKey = "77d24154f7d1152aa34c726466037a7c";
