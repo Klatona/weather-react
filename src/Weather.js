@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData]= useState({ready: false});
@@ -17,12 +16,7 @@ export default function Weather(props) {
       city: response.data.name,
       country: response.data.sys.country,
       date: new Date(response.data.dt*1000),
-      icon: <ReactAnimatedWeather
-        icon="CLOUDY"
-        color= "#557174"
-        size={70}
-        animate={true}
-      />
+      icon: response.data.weather[0].icon 
     });
   }
 function Search(){

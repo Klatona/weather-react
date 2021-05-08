@@ -1,6 +1,7 @@
 import React from "react";
 import "./WeatherInfo.css";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props){
     return (
@@ -27,8 +28,8 @@ export default function WeatherInfo(props){
           <div className="card Toronto">
             <div className="card-body">
               <p className="main-degree">
-                <span>
-                  {props.data.icon}
+               <span className="icon">
+                  <WeatherIcon code={props.data.icon} />
                 </span>
                 <span> {Math.round(props.data.temp)}</span>
                 <span className="degree-c">
