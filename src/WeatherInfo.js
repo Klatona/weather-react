@@ -18,7 +18,7 @@ export default function WeatherInfo(props){
                
               <br />
             </h2>
-            <h3>{props.data.description}</h3>
+            <h3 className="text-capitalize">{props.data.description}</h3>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData]= useState({ready: false});
-  
+  const [city, setCity]= useState(props.defaultCity);
   function handleResponse(response){
     setWeatherData({
       ready: true,
@@ -25,12 +25,26 @@ export default function Weather(props) {
       />
     });
   }
+function Search(){
+  const apiKey = "77d24154f7d1152aa34c726466037a7c";
+  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+}
+
+  function handleSubmit (event) {
+    event.preventDefault();
+    Search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
   if(weatherData.ready){
     return (
 <div className="Weather">
       <div className="card-body background">
-        <form className="search-form">
+        <form className="search-form" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-8">
               <div className="input-group mb-5 mt-4">
@@ -41,6 +55,7 @@ export default function Weather(props) {
                   placeholder="Enter a city"
                   autoFocus="on"
                   autoComplete="off"
+                  onChange={handleCityChange}
                 />
                 <button
                   className="btn btn-outline-secondary"
@@ -68,11 +83,7 @@ export default function Weather(props) {
 
   );
 } else {
-  const apiKey = "77d24154f7d1152aa34c726466037a7c";
-  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-  
-  axios.get(apiUrl).then(handleResponse);
-
+  Search();
   return "Loading...";
 
     }    
