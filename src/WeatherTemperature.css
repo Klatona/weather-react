@@ -1,0 +1,18 @@
+.degree-c:hover {
+  color: #9dad7f;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.degree-f a,
+.degree-c a {
+  color: #9dad7f;
+}
+
+.main-degree .active {
+  color: #557174;
+  cursor: default;
+}
+
+.main-degree .active:hover {
+  text-decoration: none;
+}

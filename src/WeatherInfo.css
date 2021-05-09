@@ -33,10 +33,6 @@ ul {
   bottom: 30px;
 }
 
-.degree-f a,
-.degree-c a {
-  color: #9dad7f;
-}
 .Weather {
   position: relative;
   text-align: center;
@@ -45,15 +41,6 @@ ul {
 .Toronto {
   border: 0 solid;
   text-align: center;
-}
-
-.main-degree .active {
-  color: #557174;
-  cursor: default;
-}
-
-.main-degree .active:hover {
-  text-decoration: none;
 }
 
 .main-degree {
@@ -66,12 +53,6 @@ ul {
   color: #557174;
   font-size: 65px;
   line-height: 50px;
-}
-
-.degree-c:hover {
-  color: #9dad7f;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
 }
 
 .card-body {

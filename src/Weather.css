@@ -29,6 +29,7 @@
 .Weather canvas {
   position: relative;
   top: 10px;
+  margin-right: 10px;
 }
 
 .card-body {
