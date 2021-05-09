@@ -3,7 +3,7 @@ import './App.css';
 
 import Weather from "./Weather";
 import Kristen from "./Kristen";
-import Forecast from "./Forecast";
+
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <div className="card-body background">
           
          <Weather defaultCity="Toronto"/>
-         <Forecast />
+        
         
         </div>
        
