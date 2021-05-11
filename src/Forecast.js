@@ -1,8 +1,7 @@
 import React from "react";
 
 import "./Forecast.css";
-import ReactAnimatedWeather from "react-animated-weather";
-
+import WeatherIcon from "./WeatherIcon";
 
 export default function Forecast() {
   const weatherForecast = ( <div className="col-md-2">
@@ -11,12 +10,9 @@ export default function Forecast() {
                                     <p>
                                         12:00
                                         <br />
-                                        <ReactAnimatedWeather
-                                         icon="CLEAR_DAY"
-                                             color= "#ffffff"
-                                             size={25}
-                                            animate={true}
-                                         />
+                                    <div className="forecastIcon">
+                                        <WeatherIcon code="01d" size={35} color="#f7f7e8"/>
+                                    </div>
                                     </p>
                                     <p>
                                         <strong><span className="max-temp"> </span>5º</strong>

@@ -2,6 +2,10 @@
   margin-bottom: 0;
 }
 
+.forecastIcon canvas {
+  margin: 0;
+}
+
 .Forecast {
   position: relative;
   bottom: 20px;
@@ -9,7 +13,7 @@
 }
 
 .Day {
-  color: #ffffff;
+  color: #f7f7e8;
   font-size: 14.5px;
   font-weight: 900px;
   text-align: center;
