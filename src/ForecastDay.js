@@ -18,8 +18,6 @@ export default function ForecastDay (props) {
    }
     return(
         <div className= "ForecastDay"> 
-      <div className="row justify-content-md-center">
-                     <div className="col-md-2">
                             <div className="card Day">
                                 <div className="card-body">
                                     <p>
@@ -37,8 +35,8 @@ export default function ForecastDay (props) {
                             </div>
                         </div>
                         
-                   </div>     
-                    </div>
+                      
+                 
                     );
     
 }

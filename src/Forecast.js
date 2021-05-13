@@ -15,9 +15,21 @@ function handleResponse(response) {
 if (loaded) {
     return (
         <div className= "Forecast"> 
-        <ForecastDay data={forecast[0]} />
-        </div>
-    );
+        <div className="row justify-content-md-center">
+        {forecast.map(function(dailyForecast, index){
+         if (index < 6) {
+             return (
+            
+            <div className="col-md-2" key = {index} >
+            <ForecastDay data={dailyForecast} />
+            </div>    
+        );
+        }
+        })}
+          </div>  
+          </div>  
+             );
+        
 } else {
 let apiKey = "77d24154f7d1152aa34c726466037a7c";
   let longitude = props.coordinates.lon;
