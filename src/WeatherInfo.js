@@ -25,7 +25,7 @@ export default function WeatherInfo(props){
         </div>
       </div>
       <div className="row">
-        <div className="col-sm-8">
+        <div className="col-sm-7">
           <div className="card Toronto">
             <div className="card-body">
               <p className="main-degree">
@@ -37,7 +37,7 @@ export default function WeatherInfo(props){
             </div>
           </div>
         </div>
-        <div className="col-sm-3">
+        <div className="col-sm-4">
           <div className="card humidityWind">
             <div className="card-body">
               <ul>

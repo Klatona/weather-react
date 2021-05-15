@@ -29,6 +29,7 @@ ul {
   list-style: none;
   padding: 0;
   margin-bottom: 0;
+  margin-right: 60px;
   position: relative;
   bottom: 30px;
 }
@@ -45,11 +46,8 @@ ul {
 
 .main-degree {
   position: relative;
-  left: 40px;
+  left: 50px;
   bottom: 50px;
-}
-
-.main-degree {
   color: #557174;
   font-size: 65px;
   line-height: 50px;
