@@ -26,7 +26,7 @@
   transition: all 200ms ease-in-out;
 }
 
-.Weather canvas {
+.icon canvas {
   position: relative;
   top: 10px;
   margin-right: 10px;

@@ -22,9 +22,10 @@ export default function ForecastDay (props) {
                                 <div className="card-body">
                                     <p>
                                       {day()}
-                                        <br />
+                                      </p>
+                             <div className="forecastIcon">
                                         <WeatherIcon code="01d" size={35} color="#f7f7e8"/>
-                                    </p>
+                                    </div>
                                     <p>
                                         <strong><span className="max-temp"> </span> {maxTemp()} </strong>
                                        {" "}| <span className="min-temp"> {minTemp()} </span>

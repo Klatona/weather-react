@@ -3,6 +3,8 @@
 }
 
 .forecastIcon canvas {
+  position: relative;
+  top: 8px;
   margin: 0;
 }
 
